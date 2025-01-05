@@ -13,7 +13,7 @@ from waste_collection_schedule.exceptions import (
     SourceArgumentNotFoundWithSuggestions,
 )
 from waste_collection_schedule.service.ICS import ICS
-from waste_collection_schedule.service.ICS_v1 import ICS_v1
+#from waste_collection_schedule.service.ICS_v1 import ICS_v1
 
 TITLE = "ICS"
 DESCRIPTION = "Source for ICS based schedules."
@@ -151,13 +151,13 @@ class Source:
             raise SourceArgumentExceptionMultiple(
                 ("url", "file"), "Specify either url or file"
             )
-        if version == 1:
-            self._ics = ICS_v1(
-                offset=offset,
-                split_at=split_at,
-                regex=regex,
-                title_template=title_template,
-            )
+#        if version == 1:
+#            self._ics = ICS_v1(
+#                offset=offset,
+#                split_at=split_at,
+#                regex=regex,
+#                title_template=title_template,
+#            )
         else:
             self._ics = ICS(
                 offset=offset,
